@@ -1,0 +1,38 @@
+@font-face{
+    font-family: Brandon Text Regular;
+    src:url("HVD\ Fonts\ -\ BrandonText-Regular.otf")
+}
+* {
+    font-size: 100%;
+    font-family: Brandon Text Regular;
+   }
+body{
+    padding: 40px;
+    margin-top: 2em;
+    margin-left: 8em;
+    margin-right: 8em;
+    border-radius: 25px;
+
+    border: 2px solid #73AD21;
+}
+.log{
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+    float: right;
+    margin-top: 20px;
+}
+.list{
+    display: grid;
+    grid-template-columns: 1fr 1fr 150px 1fr 1fr;
+    margin-top: 100px;
+    
+    
+    align-content: center;
+}
+h1{
+    float: top;
+    text-align: center;
+}
+.news{
+    display: grid;
+}
