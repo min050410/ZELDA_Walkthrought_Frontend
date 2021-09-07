@@ -5,25 +5,34 @@
 * {
     font-size: 100%;
     font-family: Brandon Text Regular;
+   
+    
    }
 body{
-    padding: 40px;
+    padding: 0;
     margin-top: 2em;
     margin-left: 8em;
     margin-right: 8em;
     border-radius: 25px;
-
-    border: 2px solid #73AD21;
+    /* border: 2px solid #73AD21; */
+    background-image: url(https://zeldauniverse.net/wp-content/uploads/2021/06/e32021-background.jpg);
+    background-position: right center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+   
+    
 }
 /* .log{
     display: flex;
     justify-content: flex-end;
 } */
 .list{
-    display: grid;
-    grid-template-columns: 1fr 1fr 150px 1fr 1fr;
-    margin-top: 100px;
-    align-content: center;
+    display: flex;
+    margin-top: 2em;
+    flex-direction: row;
+    justify-content: space-around;
+
 }
 h1{
     float: top;
@@ -44,7 +53,25 @@ h1{
     column-gap: 4em;
     justify-content: flex-end;
     align-items: center;
+    margin-right: 3em;
     
 }
+.scroll{
+    position: fixed; 
+    top: 0;
+    border-radius: inherit;
+    height: 100vh;
+    /* opacity: 0.5; */
+    background: white;
+    position: sticky;
+    width: 100%;
 
-
+}
+a#main {
+    margin-top: 2em;
+}
+a {
+    color: #000000;
+    text-decoration: none;
+    background-color: transparent;
+}
