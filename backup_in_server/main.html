@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
     <title>Zelda walkthrought</title>
-    <link rel="icon" href="image/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="{{ url_for('static', filename='image/favicon.ico') }}" type="image/x-icon">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="Main.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 
@@ -19,7 +19,7 @@
 
             </div>
             <a href="Main.html" id="main">
-                <img src="image/main.PNG">
+                <img src="{{ url_for('static', filename='image/main.PNG') }}">
             </a>
 
             <div class="log">
@@ -46,7 +46,7 @@
             <img src="main.PNG">
         </a> -->
 
-            <a href="post_list.html">
+            <a>
                 Community
             </a>
             <a>
@@ -65,13 +65,13 @@
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="image/test2.jpg" class="d-block w-100" alt="test2">
+                        <img src="{{ url_for('static', filename='image/test2.jpg') }}" class="d-block w-100" alt="test2">
                     </div>
                     <div class="carousel-item">
-                        <img src="image/test3.jpg" class="d-block w-100" alt="test1">
+                        <img src="{{ url_for('static', filename='image/test3.jpg') }}" class="d-block w-100" alt="test1">
                     </div>
                     <div class="carousel-item">
-                        <img src="image/test.jpg" class="d-block w-100" alt="test">
+                        <img src="{{ url_for('static', filename='image/test.jpg') }}" class="d-block w-100" alt="test">
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

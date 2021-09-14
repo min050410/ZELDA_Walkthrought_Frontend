@@ -1,28 +1,24 @@
 @font-face{
     font-family: Brandon Text Regular;
-    src:url("HVD\ Fonts\ -\ BrandonText-Regular.otf")
+    src:url('font/HVD\ Fonts\ -\ BrandonText-Regular.otf')
 }
 * {
     font-size: 100%;
     font-family: Brandon Text Regular;
-  }
+   }
 body{
     padding: 0;
     margin-top: 2em;
     margin-left: 8em;
     margin-right: 8em;
     border-radius: 25px;
-    /* border: 2px solid #73AD21; */
-    background-image: url(image/Background.jpg);
     background-position: right center;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-image: url('/static/image/Background.jpg');
+   
 }
-/* .log{
-    display: flex;
-    justify-content: flex-end;
-} */
 .list{
     display: flex;
     margin-top: 2em;
@@ -69,6 +65,5 @@ a#main {
 a {
     color: #000000;
     text-decoration: none;
-    
+    background-color: transparent;
 }
-

@@ -1,0 +1,9 @@
+{% if post_list %}
+	<ul>
+	{% for post in post_list %}
+		<li><a href="{{ url_for('main.detail', post_id=post.id)}}">{{ post.subject }} </a></li>
+	{% endfor %}
+	</ul>
+{% else %}
+	<p> 글이 없어요 ㅠㅠ</p>
+{% endif %}

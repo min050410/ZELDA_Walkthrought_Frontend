@@ -1,0 +1,20 @@
+<h1>{{ post.subject }}</h1>
+
+<div>
+	{{ post.content }}
+</div>
+
+<h5>{{ post.comment_set|length}}개의 답변이 있습니다.</h5>
+<div>
+  <ul>
+  {% for comment in post.comment_set %}
+    <li>{{ comment.content }}</li>
+  {% endfor %}
+  </ul>
+</div>
+
+<form action="{{ url_for('comment.create', post_id=post.id)}}" method="post">
+	<textarea name="content" id="content" rows="15"></textarea>
+	<input type="submit" value="답변등록">
+</form>
+
