@@ -1,6 +1,6 @@
 @font-face{
     font-family: Brandon Text Regular;
-    src:url("HVD\ Fonts\ -\ BrandonText-Regular.otf")
+    src:url('font/HVD\ Fonts\ -\ BrandonText-Regular.otf')
 }
 * {
     font-size: 100%;
@@ -12,7 +12,7 @@ body{
     margin-left: 8em;
     margin-right: 8em;
     border-radius: 25px;
-    background-image: url(image/Community_background.jpg);
+    background-image: url('/static/image/Community_background.jpg');
     background-position: right center;
     background-size: cover;
     background-repeat: no-repeat;

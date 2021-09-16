@@ -1,0 +1,14 @@
+<!-- 필드오류 -->
+{% for field, errors in form.errors.items() %}
+<div class="alert alert-danger" role="alert">
+    <script>
+        alert( '{{ ', '.join(errors) }}' );
+    </script>
+</div>
+{% endfor %}
+<!-- flash 오류 -->
+{% for message in get_flashed_messages() %}
+<div class="alert alert-danger" role="alert">
+    {{ message }}
+</div>
+{% endfor %}

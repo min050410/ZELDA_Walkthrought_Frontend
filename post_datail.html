@@ -11,7 +11,7 @@
 
 <body>
 
-    <div class="scroll">
+    <div class="scroll_v2">
         <div class="first">
             <div></div>
             <a href="post_list.html"><img src="image/main_community.PNG"></a>
@@ -45,7 +45,7 @@
                         <li>2021/9/14</li>
                     </ul>
                 </li>
-    
+
                 <li>
                     <ul class="up">
                         <li>2</li>
@@ -69,7 +69,8 @@
             </ul>
         </div>
         <form method="post" id="form">
-            <textarea name="content" id="content" rows="2"></textarea>
+            <textarea action="{{ url_for('comment.create', post_id=post.id)}}" name="content" id="content"
+                rows="2"></textarea>
             <input type="submit" value="답변등록">
         </form>
     </div>

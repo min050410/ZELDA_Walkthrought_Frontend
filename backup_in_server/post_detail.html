@@ -1,20 +1,98 @@
-<h1>{{ post.subject }}</h1>
+<!DOCTYPE html>
+<html lang="en">
 
-<div>
-	{{ post.content }}
-</div>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='image/favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='post_list.css') }}">
+    <title>Document</title>
+</head>
 
-<h5>{{ post.comment_set|length}}개의 답변이 있습니다.</h5>
-<div>
-  <ul>
-  {% for comment in post.comment_set %}
-    <li>{{ comment.content }}</li>
-  {% endfor %}
-  </ul>
-</div>
+<body>
 
-<form action="{{ url_for('comment.create', post_id=post.id)}}" method="post">
-	<textarea name="content" id="content" rows="15"></textarea>
-	<input type="submit" value="답변등록">
-</form>
+    <div class="scroll_v2">
+        <div class="first">
+            <div></div>
+            <a href="{{ url_for('main.board') }}"><img src="{{ url_for('static', filename='image/main_community.PNG') }}"></a>
+            <div class="log">
+                <a>
+                    Signup
+                </a>
 
+                <a href="Login.html">
+                    Login
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <h1>{{ post.subject }}</h1>
+            <h5>댓글 : {{ post.comment_set|length }}</h5>
+        </div>
+
+        <div class="contents">
+            {{ post.content }}
+        </div>
+        <div>
+            <ul type="hidden" class="mylist">
+            {% for comment in post.comment_set %}
+                <li>
+                    <ul class="up">
+                        <li> {{ loop.index }}</li>
+                        <li>
+                            <div>{{ comment.content }}</div>
+                        </li>
+                        <li></li>
+                        <li>
+                        {% set x =  comment.create_date  %}
+                        {% set x = x | string %}
+                        {{x[:19]}}
+
+                        </li>
+                    
+                    </ul>
+                </li>
+            {% endfor %}
+            <!--
+                <li>
+                    <ul class="up">
+                        <li>2</li>
+                        <li>
+                            <a href="post_datail.html">답변2</a>
+                        </li>
+                        <li></li>
+                        <li>2021/9/14</li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="up">
+                        <li>3</li>
+                        <li>
+                            <a href="post_datail.html">답변3</a>
+                        </li>
+                        <li></li>
+                        <li>2021/9/12</li>
+                    </ul>
+                </li>
+                -->
+            </ul>
+        </div>
+        <form action="{{ url_for('comment.create', post_id= post.id)}}" method="post" id="form">
+            {{ form.csrf_token }}
+            <!-- 오류표시 Start -->
+            {% for field, errors in form.errors.items() %}
+            <div class="alert alert-danger" role="alert">
+                <script>
+                    alert( '{{ ', '.join(errors) }}' );
+                </script>
+            </div>
+            {% endfor %}
+            <!-- 오류표시 End -->
+            <textarea name="content" id="content" rows="2"></textarea>
+            <input type="submit" value="답변등록">
+        </form>
+    </div>
+</body>
+
+</html>

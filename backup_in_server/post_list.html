@@ -1,9 +1,70 @@
-{% if post_list %}
-	<ul>
-	{% for post in post_list %}
-		<li><a href="{{ url_for('main.detail', post_id=post.id)}}">{{ post.subject }} </a></li>
-	{% endfor %}
-	</ul>
-{% else %}
-	<p> 글이 없어요 ㅠㅠ</p>
-{% endif %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='image/favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='post_list.css') }}">
+    <title>community</title>
+</head>
+
+<body>
+    <div class="scroll">
+        <div class="first">
+            <div></div>
+            <a><img src="{{ url_for('static', filename='image/main_community.PNG') }}"></a>
+            <div class="log">
+                <a>
+                    Signup
+                </a>
+
+                <a href="Login.html">
+                    Login
+                </a>
+            </div>
+        </div>
+
+        <ul class="up">
+            <li>No.</li>
+            <li>Subject</li>
+            <li></li>
+            <li>time</li>
+        </ul>
+
+        <ul type="hidden" class="mylist">
+            {% if post_list %}
+            {% for post in post_list %}
+            <li>
+                <ul class="up">
+                    <li>{{ loop.revindex }}</li>
+                    <li>
+                        <a href="{{ url_for('main.detail', post_id=post.id)}}">{{ post.subject }}</a>
+                        {% if post.comment_set|length > 0 %}
+                        <span class="num">[{{ post.comment_set|length }}]</span>
+                        {% endif %}
+                    </li>
+                    <li></li>
+                    <li> {{ post.create_date | datetime }}</li>
+                </ul>
+            </li>
+            {% endfor %}
+            {% else %}
+            <li>
+                <ul class="up">
+                    <li></li>
+                    <li>
+                        <a href="post_datail.html">질문이 없습니다</a>
+                    </li>
+                    <li></li>
+                    <li>egg</li>
+                </ul>
+            </li>
+            {% endif %}
+        </ul>
+        <a href="{{ url_for('main.create') }}" class="create">게시글  등록하기</a>
+    </div>
+</body>
+
+</html>

@@ -18,12 +18,12 @@
             <div id="update">
 
             </div>
-            <a href="Main.html" id="main">
+            <a href="{{url_for('main.main')}}" id="main">
                 <img src="{{ url_for('static', filename='image/main.PNG') }}">
             </a>
 
             <div class="log">
-                <a>
+                <a href="{{url_for('auth.signup') }}">
                     Signup
                 </a>
 
@@ -46,7 +46,7 @@
             <img src="main.PNG">
         </a> -->
 
-            <a>
+            <a href="{{url_for('main.board')}}">
                 Community
             </a>
             <a>
