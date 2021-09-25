@@ -12,25 +12,37 @@
 </head>
 
 <body>
-
+    <!--오류-->
+    {% for message in get_flashed_messages() %}
+            <script>
+                alert( '{{ message }}' );
+            </script>
+    {% endfor %}
     <div class="scroll">
         <div class="first">
             <div id="update">
-
             </div>
             <a href="{{url_for('main.main')}}" id="main">
                 <img src="{{ url_for('static', filename='image/main.PNG') }}">
             </a>
-
+            {% if g.user %}
+            <div class="log">
+            <a></a>
+            <a href="{{ url_for('auth.logout') }}">
+                    {{ g.user.username }} (로그아웃)
+            </a> 
+            </div>
+            {% else %}
             <div class="log">
                 <a href="{{url_for('auth.signup') }}">
                     Signup
                 </a>
 
-                <a href="Login.html">
+                <a href="{{ url_for('auth.login') }}">
                     Login
                 </a>
             </div>
+            {% endif %}
         </div>
 
 

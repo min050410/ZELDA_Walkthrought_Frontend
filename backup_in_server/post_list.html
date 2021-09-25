@@ -15,22 +15,32 @@
         <div class="first">
             <div></div>
             <a><img src="{{ url_for('static', filename='image/main_community.PNG') }}"></a>
+            {% if g.user %}
             <div class="log">
-                <a>
+                <a></a>
+                <a href="{{ url_for('auth.logout') }}">
+                    {{ g.user.username }} (로그아웃)
+                </a>
+            </div>
+            {% else %}
+            <div class="log">
+                <a href="{{url_for('auth.signup') }}">
                     Signup
                 </a>
 
-                <a href="Login.html">
+                <a href="{{ url_for('auth.login') }}">
                     Login
                 </a>
             </div>
+            {% endif %}
         </div>
 
         <ul class="up">
             <li>No.</li>
             <li>Subject</li>
             <li></li>
-            <li>time</li>
+            <li>Time</li>
+            <li>Name</li>
         </ul>
 
         <ul type="hidden" class="mylist">
@@ -47,6 +57,7 @@
                     </li>
                     <li></li>
                     <li> {{ post.create_date | datetime }}</li>
+                    <li></li>
                 </ul>
             </li>
             {% endfor %}
@@ -59,11 +70,12 @@
                     </li>
                     <li></li>
                     <li>egg</li>
+                    <li></li>
                 </ul>
             </li>
             {% endif %}
         </ul>
-        <a href="{{ url_for('main.create') }}" class="create">게시글  등록하기</a>
+        <a id="plus" href="{{ url_for('main.create') }}" class="create">Post<img src="image/plus.png"></a>
     </div>
 </body>
 

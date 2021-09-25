@@ -9,6 +9,9 @@
 <!-- flash 오류 -->
 {% for message in get_flashed_messages() %}
 <div class="alert alert-danger" role="alert">
-    {{ message }}
+    <script>
+        alert( '{{ message }}' );
+    </script>
+    
 </div>
 {% endfor %}

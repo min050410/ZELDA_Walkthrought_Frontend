@@ -48,7 +48,7 @@ ul.mylist{
 ul.mylist .up{
     /* list-style: none; */
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
     justify-items: start;
     justify-content: space-between;
     padding: 20px 0px 0px 30px;
@@ -63,7 +63,7 @@ ul.mylist{
 .up{ 
     list-style: none;
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
     justify-items: start;
     justify-content: space-between;
     padding: 10px 0px 0px 20px;
@@ -75,6 +75,14 @@ ul.mylist{
 a{
     text-decoration: none;
     color: black;
+}
+#plus{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    float: right;
+    margin-right: 20px;
+    font-size: 20px;
 }
 
 /*---------------------- post_detail -> css -------------------------*/
